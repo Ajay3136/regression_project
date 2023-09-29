@@ -61,3 +61,9 @@ jobs:
           git add build_test_run.log
           git commit -m "Update main.log"
           git push origin main
+
+      - name: Upload pytest test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: pytest-results-1
+          path: junit/test-results.xml
